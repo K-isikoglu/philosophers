@@ -24,17 +24,18 @@ Compile with `make`.
 Run with `./philo number_of_philosophers time_to_die
 time_to_eat time_to_sleep [number_of_times_each_philosopher_must_eat]`
 - `number_of_philosophers`: is the number of philosophers and also the number
-of forks
+of forks. Must be between 1 and 100.
 - `time_to_die`: is in milliseconds, if a philosopher doesn’t start eating ’time_to_die’
 milliseconds after starting his last meal or the beginning of the simulation, it
-dies
+dies. Must be at least 50 milliseconds.
 - `time_to_eat`: is in milliseconds and is the time it takes for a philosopher to
-eat. During that time he will need to keep the two forks.
+eat. During that time he will need to keep the two forks. Must be at least 50 milliseconds.
 - `time_to_sleep`: is in milliseconds and is the time the philosopher will spend
-sleeping.
+sleeping. Must be at least 50 milliseconds.
 - `number_of_times_each_philosopher_must_eat`: argument is optional, if all
 philosophers eat at least ’number_of_times_each_philosopher_must_eat’ the
 simulation will stop. If not specified, the simulation will stop only at the death
 of a philosopher.
 
 This implementation treats every philosopher as a separate thread and protects every fork with a mutex.
+To ensure stability, it's not recommended to run the program with more than 100 philosophers or with time arguments lower than 60 ms.
