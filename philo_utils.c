@@ -6,7 +6,7 @@
 /*   By: kisikogl <kisikogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 10:18:37 by kisikogl          #+#    #+#             */
-/*   Updated: 2023/03/11 11:00:44 by kisikogl         ###   ########.fr       */
+/*   Updated: 2024/01/25 00:16:12 by kisikogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,9 @@ char	check_for_error(t_data *data)
 	int	i;
 
 	i = 0;
-	if (data[i].philo_num < 1 || data[i].time_to_die < 50
-		|| data[i].time_to_eat < 50 || data[i].time_to_sleep < 50)
+	if (data[i].philo_num < 1 || data[i].philo_num > 100
+		|| data[i].time_to_die < 50|| data[i].time_to_eat < 50
+		|| data[i].time_to_sleep < 50)
 		return (1);
 	while (i < data[i].philo_num)
 	{
