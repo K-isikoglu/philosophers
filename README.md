@@ -1,4 +1,4 @@
-# philosophers
+# Philosophers
 Simulation of the dining philosophers problem.
 
 ## Rules
